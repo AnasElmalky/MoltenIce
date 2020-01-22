@@ -31,7 +31,7 @@ public class GeneratingSprites : MonoBehaviour
         GameObject currentSprite = Instantiate(this.gameObject, spriteParent.transform);
 
         currentSprite.transform.position = new Vector3(
-            currentSprite.transform.position.x + currentSprite.GetComponent<SpriteRenderer>().size.x / 10 ,
+            currentSprite.transform.position.x + currentSprite.GetComponent<SpriteRenderer>().size.x * gameObject.transform.localScale.x ,
             currentSprite.transform.position.y,
             currentSprite.transform.position.z
             );
