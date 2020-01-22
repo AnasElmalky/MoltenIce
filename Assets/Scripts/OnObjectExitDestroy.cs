@@ -6,8 +6,8 @@ public class OnObjectExitDestroy : MonoBehaviour
 {
     #region VARIABLES
     [Header("Refernce Variables")]
-    [SerializeField]
-    GameObject exitedObject;
+   
+   
 
     [Header("development variables")]
     float spriteHeight;
@@ -15,8 +15,8 @@ public class OnObjectExitDestroy : MonoBehaviour
 
     #region UNITY CALLBACKS
     private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject == exitedObject)
+    {   print (collision.gameObject.name);
+        if (collision.gameObject.name == "Main Camera")
         {
             Destroy(this.gameObject);
         }
