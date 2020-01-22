@@ -23,10 +23,6 @@ public class CharacterMovments : MonoBehaviour
     }
     #endregion
 
-    #region PUBLIC METHODS
-
-    #endregion
-
     #region PRiVATE METHODS
     private void CheckVerticalMovment()
     {

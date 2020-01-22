@@ -5,10 +5,7 @@ using UnityEngine;
 public class OnObjectExitDestroy : MonoBehaviour
 {
     #region VARIABLES
-    [Header("Refernce Variables")]
-    [SerializeField]
-    GameObject exitedObject;
-
+ 
     [Header("development variables")]
     float spriteHeight;
     #endregion
@@ -16,7 +13,7 @@ public class OnObjectExitDestroy : MonoBehaviour
     #region UNITY CALLBACKS
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == exitedObject)
+        if (collision.gameObject == Camera.main.gameObject)
         {
             Destroy(this.gameObject);
         }
