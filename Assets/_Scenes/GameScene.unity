@@ -269,6 +269,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &484279045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2015485365644797079, guid: 78f408a0da29fd64ba8ecd6f5875226f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466939780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &619147883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2015485364572120568, guid: 78f408a0da29fd64ba8ecd6f5875226f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466939780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654118230
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +906,7 @@ PrefabInstance:
     - target: {fileID: 2015485364981173182, guid: 78f408a0da29fd64ba8ecd6f5875226f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2015485364981173182, guid: 78f408a0da29fd64ba8ecd6f5875226f,
         type: 3}
@@ -967,18 +985,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f408a0da29fd64ba8ecd6f5875226f, type: 3}
---- !u!114 &1466939781 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2015485365644797073, guid: 78f408a0da29fd64ba8ecd6f5875226f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1466939780}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1466939782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2015485364053106849, guid: 78f408a0da29fd64ba8ecd6f5875226f,
@@ -1190,6 +1196,12 @@ PrefabInstance:
 --- !u!1 &1504228091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1714274998676182, guid: 6d0265f627f732c4e8c257e2f4bd0ca0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1504228090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1504228093 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95088602234082902, guid: 6d0265f627f732c4e8c257e2f4bd0ca0,
     type: 3}
   m_PrefabInstance: {fileID: 1504228090}
   m_PrefabAsset: {fileID: 0}
@@ -1506,7 +1518,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1722830621
 PrefabInstance:
@@ -1713,6 +1725,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1722830621}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1722830625 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95051975481186876, guid: fd96c89408de2c944865a800062ab087,
+    type: 3}
+  m_PrefabInstance: {fileID: 1722830621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1824917937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1744,7 @@ GameObject:
   - component: {fileID: 1824917940}
   - component: {fileID: 1824917941}
   - component: {fileID: 1824917942}
+  - component: {fileID: 1824917943}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1747,7 +1766,7 @@ Transform:
   - {fileID: 1166065152}
   - {fileID: 1722830622}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1824917939
 Rigidbody2D:
@@ -1780,7 +1799,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.041254282, y: 0.8543594}
@@ -1831,11 +1850,28 @@ MonoBehaviour:
   fireSwitchImage: {fileID: 1466939782}
   iceSwitchColor: {r: 0, g: 1, b: 0.8784314, a: 0.2}
   fireSwitchColor: {r: 1, g: 0.50980395, b: 0, a: 0.2}
-  characterSwitcherImage: {fileID: 1466939781}
+  characterSwitcherImage: {fileID: 484279045}
   iceRespawnEffect: {fileID: 2404002089446324714, guid: 165a3544f0b58e1488c2e8d383caa919,
     type: 3}
   fireRespawnEffect: {fileID: 903536129305747979, guid: e5bda15f36cc6f54d8957e5703f9199a,
     type: 3}
+--- !u!114 &1824917943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824917937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21df8632e405e1c48960b07ad186deeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSwitcherScript: {fileID: 1824917942}
+  characterMovementScript: {fileID: 1824917941}
+  iceAnimator: {fileID: 1504228093}
+  fireAnimator: {fileID: 1722830625}
+  healthSlider: {fileID: 619147883}
 --- !u!1 &1986650779
 GameObject:
   m_ObjectHideFlags: 0

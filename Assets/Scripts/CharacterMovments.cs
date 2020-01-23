@@ -12,14 +12,11 @@ public class CharacterMovments : MonoBehaviour
     #endregion
 
     #region UNITY CALLBACKS
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         CheckVerticalMovment();
         MoveHorizonatl();
+        IncreaseSpeed();
     }
     #endregion
 
@@ -41,6 +38,10 @@ public class CharacterMovments : MonoBehaviour
     private Vector2 getMousePosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+    private void IncreaseSpeed()
+    {
+        Time.timeScale += .0001f;
     }
     #endregion
 }

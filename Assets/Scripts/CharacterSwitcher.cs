@@ -16,20 +16,19 @@ public class CharacterSwitcher : MonoBehaviour
     [SerializeField]
     Color iceSwitchColor, fireSwitchColor;
     [SerializeField]
-    Image characterSwitcherImage;
+    GameObject characterSwitcherImage;
     [SerializeField]
     GameObject iceRespawnEffect, fireRespawnEffect;
 
     [Header("development values")]
     string currentPlayer;
-    string firePlayerName, icePlayerName;
+    string playerToSwitch;
+    public static string firePlayerName = "fire", icePlayerName = "ice";
     #endregion
 
     #region UNITYCALLBACKS
     private void Start()
     {
-        firePlayerName = "fire";
-        icePlayerName = "ice";
         ChoosePlayerValues(icePlayerName);
     }
     #endregion
@@ -37,8 +36,17 @@ public class CharacterSwitcher : MonoBehaviour
     #region PUBLIC METHODS
     public void TogglePlayer()
     {
-        string playerToChoose = (currentPlayer == firePlayerName) ? firePlayerName : icePlayerName;
+        string playerToChoose = (playerToSwitch == firePlayerName) ? firePlayerName : icePlayerName;
         ChoosePlayerValues(playerToChoose);
+    }
+
+    public string GetSelectedCharacterName()
+    {
+        return currentPlayer;
+    }
+    public void DisableSwitcher()
+    {
+        characterSwitcherImage.SetActive(false);
     }
     #endregion
 
@@ -61,14 +69,16 @@ public class CharacterSwitcher : MonoBehaviour
         if (playerToBeActivated == icePlayerName)
         {
             Instantiate(iceRespawnEffect, gameObject.transform);
-            characterSwitcherImage.color = fireSwitchColor;
-            currentPlayer = firePlayerName;
+            characterSwitcherImage.GetComponent<Image>().color = fireSwitchColor;
+            playerToSwitch = firePlayerName;
+            currentPlayer = icePlayerName;
         }
         else
         {
             Instantiate(fireRespawnEffect, gameObject.transform);
-            characterSwitcherImage.color = iceSwitchColor;
-            currentPlayer = icePlayerName;
+            characterSwitcherImage.GetComponent<Image>().color = iceSwitchColor;
+            playerToSwitch = icePlayerName;
+            currentPlayer = firePlayerName;
         }
     }
     #endregion
