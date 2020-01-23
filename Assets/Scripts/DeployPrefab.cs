@@ -3,29 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeployPrefab : MonoBehaviour
-{ 
-    public GameObject obstacelPrefab;
-    public GameObject playerPostion;
-    public float respawnTime =1.0f;
+{
+    #region VARIABLES
 
-    private Vector2 screenBounds;
-    
+    [Header("REference values")]
+
+    [SerializeField]
+    GameObject[] obstecles;
+    [SerializeField]
+    GameObject obsteclesParent;
+    [SerializeField]
+    GameObject playerObj;
+    [SerializeField]
+    float respawnTime =1.0f;
+
+    [Header("Development values")]
+    float minYposition = -4.88f;
+    float maxYPosition = 0.79f;
+    float additionalxValue = 15;
+    #endregion
+
+    #region UNITY CALLBACKS
     void Start()
     {
-       // screenBounds =Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
-        StartCoroutine(obtaclesWave());
+        StartCoroutine(ObtaclesWave());
     }
 
-    void spawnObstacel()
+    #endregion
+
+    #region PRIVATE MEHODS
+    private void SpawnObstacel(GameObject obstacleToBeRespawn)
     {
-        GameObject a = Instantiate(obstacelPrefab) as GameObject;
-        a.transform.position=new Vector2(playerPostion.transform.position.x+15,Random.Range(-4.88f,0.79f));
-       // a.transform.position= new Vector2(screenBounds.x *-2,Random.Range(-screenBounds.y,screenBounds.y/2 ));
+        GameObject newObstacle = Instantiate(obstacleToBeRespawn , obsteclesParent.transform) as GameObject;
+        newObstacle.transform.position=new Vector2(playerObj.transform.position.x+ additionalxValue, Random.Range(minYposition, maxYPosition));
     }
-   IEnumerator obtaclesWave(){
-       while(true){
-       yield return new WaitForSeconds(respawnTime);    
-       spawnObstacel();
-       }
-   }
+    #endregion
+
+    #region CORUOTINES
+    IEnumerator ObtaclesWave(){
+        while(true)
+        {
+            yield return new WaitForSeconds(respawnTime);
+            
+            SpawnObstacel(obstecles[Random.Range(0,obstecles.Length)]);
+        }
+    }
+
+    #endregion
 }
