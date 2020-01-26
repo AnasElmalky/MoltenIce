@@ -388,6 +388,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 3141033654068681166, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.01605606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141033654068681166, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 180.00986
+      objectReference: {fileID: 0}
     - target: {fileID: 4443273754335220318, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
         type: 3}
       propertyPath: cameraToDrawAfter
@@ -1403,17 +1413,17 @@ PrefabInstance:
     - target: {fileID: 3141033654068681166, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
         type: 3}
       propertyPath: m_Size.x
-      value: 13.500837
+      value: 13.534151
       objectReference: {fileID: 0}
     - target: {fileID: 3141033654068681166, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.064697266
+      value: 0.023802042
       objectReference: {fileID: 0}
     - target: {fileID: 3141033654068681166, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.029061496
+      value: -0.029061556
       objectReference: {fileID: 0}
     - target: {fileID: 3141033654068681166, guid: 6db96fd5453e6b540a3d2d8c7955b91e,
         type: 3}
@@ -1851,9 +1861,9 @@ MonoBehaviour:
   iceSwitchColor: {r: 0, g: 1, b: 0.8784314, a: 0.2}
   fireSwitchColor: {r: 1, g: 0.50980395, b: 0, a: 0.2}
   characterSwitcherImage: {fileID: 484279045}
-  iceRespawnEffect: {fileID: 2404002089446324714, guid: 165a3544f0b58e1488c2e8d383caa919,
+  iceRespawnEffect: {fileID: 3321174853024265261, guid: 1de2da0c5a4edbe41943b9242785387a,
     type: 3}
-  fireRespawnEffect: {fileID: 903536129305747979, guid: e5bda15f36cc6f54d8957e5703f9199a,
+  fireRespawnEffect: {fileID: 1900036871666235936, guid: c72559275f16f8e4690e9b22f24f7086,
     type: 3}
 --- !u!114 &1824917943
 MonoBehaviour:
@@ -2035,6 +2045,10 @@ PrefabInstance:
     - target: {fileID: 1000010302070858, guid: d0c0b49979d372942ae5a964d9364111, type: 3}
       propertyPath: m_Name
       value: RainEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010302070858, guid: d0c0b49979d372942ae5a964d9364111, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000011092933414, guid: d0c0b49979d372942ae5a964d9364111, type: 3}
       propertyPath: m_IsActive
