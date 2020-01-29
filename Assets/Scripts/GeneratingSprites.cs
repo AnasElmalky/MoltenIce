@@ -18,8 +18,10 @@ public class GeneratingSprites : MonoBehaviour
     #region UNITY CALLBACKS
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("here");
         if(collision.gameObject == cameraToDrawAfter)
         {
+            print("not here");
             Generate();
         }
     }
